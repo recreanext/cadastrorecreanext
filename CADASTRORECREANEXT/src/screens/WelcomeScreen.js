@@ -5,7 +5,7 @@ export default function WelcomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Image source={require('../../assets/logo.png')} style={styles.logo} />
-      <Text style={styles.description}>Bem-vindo ao Kids Hotel!</Text>
+      <Text style={styles.description}>Bem-vindo ao CADASTRORECREANEXT!</Text>
       <Button title="Começar" onPress={() => navigation.navigate('GuestForm')} />
     </View>
   );

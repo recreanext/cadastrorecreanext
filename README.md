@@ -1,6 +1,6 @@
-# Recreacao Kids Hotel
+CADASTRORECREANEXT - App de Recreação Kids
 
- qilqqp-codex/criar-app-recreação-kids-hotel
+- `CADASTRORECREANEXT/` - aplicativo React Native (Expo SDK 53) para cadastro de crianças e comunicação com a equipe de recreação
 Este repositório contém dois projetos:
 
 - `kids-hotel-app/` - aplicativo React Native para cadastro de crianças e comunicação com a equipe de recreação
