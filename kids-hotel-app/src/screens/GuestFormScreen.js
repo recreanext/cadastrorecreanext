@@ -1,8 +1,4 @@
- jv4j14-codex/criar-app-recreação-kids-hotel
-import React, { useState, useEffect } from 'react';
-
 import React, { useState } from 'react';
- main
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -11,22 +7,6 @@ export default function GuestFormScreen({ navigation }) {
   const [room, setRoom] = useState('');
   const [phone, setPhone] = useState('');
 
- jv4j14-codex/criar-app-recreação-kids-hotel
-  useEffect(() => {
-    const load = async () => {
-      const data = await AsyncStorage.getItem('guest');
-      if (data) {
-        const g = JSON.parse(data);
-        setName(g.name || '');
-        setRoom(g.room || '');
-        setPhone(g.phone || '');
-      }
-    };
-    load();
-  }, []);
-
-
- main
   const handleSubmit = async () => {
     const guest = { name, room, phone };
     await AsyncStorage.setItem('guest', JSON.stringify(guest));
