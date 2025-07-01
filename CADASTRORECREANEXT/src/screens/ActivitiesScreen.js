@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, Button, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+ jv4j14-codex/criar-app-recreação-kids-hotel
+const defaultActivities = [
+
 const activities = [
+ main
   { id: '1', time: '10:00', description: 'Oficina de pintura' },
   { id: '2', time: '14:00', description: 'Caça ao tesouro' },
   { id: '3', time: '16:00', description: 'Jogos na piscina' }
@@ -10,11 +14,20 @@ const activities = [
 
 export default function ActivitiesScreen({ navigation }) {
   const [child, setChild] = useState(null);
+ jv4j14-codex/criar-app-recreação-kids-hotel
+  const [activities, setActivities] = useState(defaultActivities);
+
+ main
 
   useEffect(() => {
     const load = async () => {
       const c = await AsyncStorage.getItem('child');
       setChild(JSON.parse(c));
+ jv4j14-codex/criar-app-recreação-kids-hotel
+      const progs = await AsyncStorage.getItem('programs');
+      if (progs) setActivities(JSON.parse(progs));
+
+ main
     };
     load();
   }, []);
