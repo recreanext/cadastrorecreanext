@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+ qilqqp-codex/criar-app-recreação-kids-hotel
 import { View, Text, TextInput, Button, StyleSheet, CheckBox, ScrollView } from 'react-native';
+
+import { View, Text, TextInput, Button, StyleSheet, CheckBox } from 'react-native';
+ main
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function ChildFormScreen({ navigation }) {
   const [childName, setChildName] = useState('');
   const [age, setAge] = useState('');
+ qilqqp-codex/criar-app-recreação-kids-hotel
   const [guardians, setGuardians] = useState('');
   const [whatsapp1, setWhatsapp1] = useState('');
   const [whatsapp2, setWhatsapp2] = useState('');
@@ -25,6 +30,8 @@ export default function ChildFormScreen({ navigation }) {
   const [canFloat, setCanFloat] = useState(false);
   const [allowOutActivities, setAllowOutActivities] = useState(false);
   const [allowMeals, setAllowMeals] = useState(false);
+
+ main
   const [food, setFood] = useState('');
   const [allergies, setAllergies] = useState('');
   const [participation, setParticipation] = useState(false);
@@ -32,6 +39,7 @@ export default function ChildFormScreen({ navigation }) {
   const [notes, setNotes] = useState('');
 
   const handleSubmit = async () => {
+ qilqqp-codex/criar-app-recreação-kids-hotel
     const child = {
       childName,
       age,
@@ -61,13 +69,15 @@ export default function ChildFormScreen({ navigation }) {
       imageUse,
       notes
     };
-    await AsyncStorage.setItem('child', JSON.stringify(child));
-    navigation.navigate('UserPanel');
 
+    const child = { childName, age, food, allergies, participation, imageUse, notes };
+ main
+    await AsyncStorage.setItem('child', JSON.stringify(child));
     navigation.navigate('Activities');
   };
 
   return (
+ qilqqp-codex/criar-app-recreação-kids-hotel
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Cadastro da Criança</Text>
       <TextInput placeholder="Nome da criança" value={childName} onChangeText={setChildName} style={styles.input} />
@@ -116,11 +126,19 @@ export default function ChildFormScreen({ navigation }) {
         <CheckBox value={canFloat} onValueChange={setCanFloat} />
         <Text style={styles.checkboxLabel}>Sabe flutuar?</Text>
       </View>
+
+    <View style={styles.container}>
+      <Text style={styles.title}>Cadastro da Criança</Text>
+      <TextInput placeholder="Nome da criança" value={childName} onChangeText={setChildName} style={styles.input} />
+      <TextInput placeholder="Idade" value={age} onChangeText={setAge} style={styles.input} />
+      <TextInput placeholder="Restrições alimentares" value={food} onChangeText={setFood} style={styles.input} />
+      <TextInput placeholder="Alergias" value={allergies} onChangeText={setAllergies} style={styles.input} />
       <View style={styles.checkboxRow}>
         <CheckBox value={participation} onValueChange={setParticipation} />
         <Text style={styles.checkboxLabel}>Autorização para participar das atividades</Text>
       </View>
       <View style={styles.checkboxRow}>
+ qilqqp-codex/criar-app-recreação-kids-hotel
         <CheckBox value={allowOutActivities} onValueChange={setAllowOutActivities} />
         <Text style={styles.checkboxLabel}>Atividades fora da área do hotel</Text>
       </View>
@@ -137,13 +155,26 @@ export default function ChildFormScreen({ navigation }) {
       <TextInput placeholder="Observações" value={notes} onChangeText={setNotes} style={styles.input} />
       <Button title="Salvar" onPress={handleSubmit} />
     </ScrollView>
+
+        <CheckBox value={imageUse} onValueChange={setImageUse} />
+        <Text style={styles.checkboxLabel}>Autorização para uso de imagem</Text>
+      </View>
+      <TextInput placeholder="Observações" value={notes} onChangeText={setNotes} style={styles.input} />
+      <Button title="Salvar" onPress={handleSubmit} />
+    </View>
+ main
   );
 }
 
 const styles = StyleSheet.create({
+ qilqqp-codex/criar-app-recreação-kids-hotel
   container: { padding: 20 },
   title: { fontSize: 20, marginBottom: 20, textAlign: 'center' },
   sectionTitle: { fontSize: 16, marginTop: 20, marginBottom: 10 },
+
+  container: { flex: 1, padding: 20 },
+  title: { fontSize: 20, marginBottom: 20, textAlign: 'center' },
+ main
   input: { borderWidth: 1, borderColor: '#ccc', padding: 10, marginBottom: 10 },
   checkboxRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 10 },
   checkboxLabel: { marginLeft: 8 }

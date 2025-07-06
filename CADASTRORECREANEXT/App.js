@@ -8,10 +8,18 @@ import ChildFormScreen from './src/screens/ChildFormScreen';
 import UserPanelScreen from './src/screens/UserPanelScreen';
 import ActivitiesScreen from './src/screens/ActivitiesScreen';
 import ChatScreen from './src/screens/ChatScreen';
+
+import GuestFormScreen from './src/screens/GuestFormScreen';
+import ChildFormScreen from './src/screens/ChildFormScreen';
+import ActivitiesScreen from './src/screens/ActivitiesScreen';
+import ChatScreen from './src/screens/ChatScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import AdminLoginScreen from './src/screens/AdminLoginScreen';
 import AdminPanelScreen from './src/screens/AdminPanelScreen';
 import ProgramManagementScreen from './src/screens/ProgramManagementScreen';
+
+import UserPanelScreen from './src/screens/UserPanelScreen';
+
 
 const Stack = createStackNavigator();
 
@@ -30,6 +38,21 @@ export default function App() {
         <Stack.Screen name="AdminLogin" component={AdminLoginScreen} />
         <Stack.Screen name="AdminPanel" component={AdminPanelScreen} />
         <Stack.Screen name="ProgramManagement" component={ProgramManagementScreen} />
+
+        <Stack.Screen name="Login" component={LoginScreen} />
+
+
+        <Stack.Screen name="GuestForm" component={GuestFormScreen} />
+        <Stack.Screen name="ChildForm" component={ChildFormScreen} />
+        <Stack.Screen name="Activities" component={ActivitiesScreen} />
+        <Stack.Screen name="Chat" component={ChatScreen} />
+        <Stack.Screen name="AdminLogin" component={AdminLoginScreen} />
+        <Stack.Screen name="AdminPanel" component={AdminPanelScreen} />
+        <Stack.Screen name="ProgramManagement" component={ProgramManagementScreen} />
+
+        <Stack.Screen name="UserPanel" component={UserPanelScreen} />
+
+ 
       </Stack.Navigator>
     </NavigationContainer>
   );
