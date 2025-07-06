@@ -3,6 +3,12 @@
 Este projeto é um exemplo simples de aplicativo de recreação infantil para hotéis utilizando React Native com Expo SDK 53. Os dados são armazenados localmente utilizando `AsyncStorage`.
 
 ## Funcionalidades
+- Tela de boas-vindas com opção "Começar"
+- Cadastro de hóspede e da criança
+- Painel do usuário exibindo os dados cadastrados
+- Login do administrador e painel para gerenciar programas
+- Listagem de atividades e chat simples armazenado localmente
+
 - Cadastro de hóspede e da criança
  jv4j14-codex/criar-app-recreação-kids-hotel
 - Login do hóspede

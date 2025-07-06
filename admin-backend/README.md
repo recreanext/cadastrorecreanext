@@ -16,9 +16,12 @@ npm install
 node server.js
 ```
 O servidor rodará na porta 3001.
- jv4j14-codex/criar-app-recreação-kids-hotel
+
+Para verificar a instalação, execute `npm test` que apenas imprime uma
+mensagem informativa.
 
 Para verificar a instalação, execute `npm test` que apenas imprime uma
 mensagem informativa.
 
  main
+]

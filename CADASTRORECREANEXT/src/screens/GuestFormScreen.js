@@ -1,4 +1,5 @@
- jv4j14-codex/criar-app-recreação-kids-hotel
+import React, { useState, useEffect } from 'react';
+
 import React, { useState, useEffect } from 'react';
 
 import React, { useState } from 'react';
@@ -11,7 +12,6 @@ export default function GuestFormScreen({ navigation }) {
   const [room, setRoom] = useState('');
   const [phone, setPhone] = useState('');
 
- jv4j14-codex/criar-app-recreação-kids-hotel
   useEffect(() => {
     const load = async () => {
       const data = await AsyncStorage.getItem('guest');

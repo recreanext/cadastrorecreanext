@@ -1,4 +1,3 @@
- jv4j14-codex/criar-app-recreação-kids-hotel
 
  zdqjgv-codex/criar-app-recreação-kids-hotel
  main
@@ -11,11 +10,11 @@ Este repositório contém dois projetos:
 
 Consulte os READMEs de cada pasta para instruções de uso.
 
- jv4j14-codex/criar-app-recreação-kids-hotel
+Execute `npm test` na raiz ou em `admin-backend` para verificar rapidamente se o
+ambiente está configurado. Nenhum teste automatizado é fornecido ainda.
 Execute `npm test` na raiz ou em `admin-backend` para verificar rapidamente se o
 ambiente está configurado. Nenhum teste automatizado é fornecido ainda.
 
- qilqqp-codex/criar-app-recreação-kids-hotel
 Este repositório contém dois projetos:
 
 - `kids-hotel-app/` - aplicativo React Native para cadastro de crianças e comunicação com a equipe de recreação

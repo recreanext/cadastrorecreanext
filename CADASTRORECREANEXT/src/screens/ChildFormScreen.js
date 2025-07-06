@@ -62,6 +62,8 @@ export default function ChildFormScreen({ navigation }) {
       notes
     };
     await AsyncStorage.setItem('child', JSON.stringify(child));
+    navigation.navigate('UserPanel');
+
     navigation.navigate('Activities');
   };
 

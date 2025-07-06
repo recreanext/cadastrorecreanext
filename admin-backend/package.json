@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
- jv4j14-codex/criar-app-recreação-kids-hotel
+
+    "test": "node -e \"console.log('No tests yet')\""
+
     "test": "node -e \"console.log('No tests yet')\""
 
     "test": "echo \"Error: no test specified\" && exit 1"
- main
+
   },
   "keywords": [],
   "author": "",
@@ -17,11 +19,12 @@
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
- jv4j14-codex/criar-app-recreação-kids-hotel
+    "express": "^4.19.2",
+
     "express": "^4.19.2",
 
     "express": "^5.1.0",
- main
+
     "jsonwebtoken": "^9.0.2",
     "multer": "^2.0.1",
     "socket.io": "^4.8.1",

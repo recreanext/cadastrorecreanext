@@ -15,6 +15,8 @@ export default function LoginScreen({ navigation }) {
     }
     const guest = JSON.parse(data);
     if (guest.name === name && guest.room === room) {
+      navigation.navigate('UserPanel');
+
       navigation.navigate('GuestForm');
     } else {
       Alert.alert('Dados incorretos');
