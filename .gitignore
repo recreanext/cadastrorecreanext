@@ -1,7 +1,7 @@
 node_modules/
 admin-backend/node_modules/
 admin-backend/uploads/
-admin-backend/data/*.json
+admin-backend/data/.json
 CADASTRORECREANEXT/node_modules/
 kids-hotel-app/node_modules/
 main
