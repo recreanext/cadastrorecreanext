@@ -9,6 +9,7 @@ interface Activity {
 
 export default function Programacao() {
   const [activities, setActivities] = useState<Activity[]>([]);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem('activities');
@@ -24,6 +25,16 @@ export default function Programacao() {
     }
   }, []);
 
+  const copyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // ignore
+    }
+  };
+
   return (
     <main className="p-4 max-w-xl mx-auto">
       <h1 className="text-xl font-bold mb-4">Programação Semanal</h1>
@@ -34,6 +45,12 @@ export default function Programacao() {
           </li>
         ))}
       </ul>
+      <button
+        onClick={copyLink}
+        className="mt-4 bg-blue-500 text-white px-3 py-1 rounded"
+      >
+        {copied ? 'Link copiado!' : 'Copiar link da programação'}
+      </button>
       <a
         href="https://wa.me/SEUNUMERO"
         className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full"

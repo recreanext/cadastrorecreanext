@@ -9,6 +9,11 @@ export default function Home() {
   const [hotel, setHotel] = useState('');
 
   useEffect(() => {
+    const child = localStorage.getItem('childForm');
+    if (child) {
+      router.replace('/programacao');
+      return;
+    }
     const saved = localStorage.getItem('parentInfo');
     if (saved) {
       const info = JSON.parse(saved);
@@ -16,7 +21,7 @@ export default function Home() {
       setApartamento(info.apartamento || '');
       setHotel(info.hotel || '');
     }
-  }, []);
+  }, [router]);
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
