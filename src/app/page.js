@@ -6,9 +6,20 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
+ 
+    const registration = localStorage.getItem('registration');
+    if (registration) {
+      router.push('/programacao');
+      return;
+    }
+    const guest = localStorage.getItem('guest');
+    if (guest) {
+      router.push('/cadastro');
+
     const stored = localStorage.getItem('guest');
     if (stored) {
       router.push('/programacao');
+
     }
   }, [router]);
 
