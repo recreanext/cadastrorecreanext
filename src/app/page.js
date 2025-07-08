@@ -6,6 +6,7 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
+
  
     const registration = localStorage.getItem('registration');
     if (registration) {
