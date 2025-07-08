@@ -4,7 +4,11 @@ import { useEffect, useState } from 'react';
 
 export default function Cadastro() {
   const router = useRouter();
+
   const [children, setChildren] = useState([{ nome: '', idade: '' }]);
+
+  const [children, setChildren] = useState([{ nome: '', idade: '', restricoes: '', alergias: '', autorizado: false }]);
+
   const [form, setForm] = useState({
     responsaveis: '',
     whatsapp1: '',
@@ -50,7 +54,11 @@ export default function Cadastro() {
   }, [router]);
 
   const addChild = () => {
+
     setChildren((c) => [...c, { nome: '', idade: '' }]);
+
+    setChildren((c) => [...c, { nome: '', idade: '', restricoes: '', alergias: '', autorizado: false }]);
+
   };
 
   const handleChildChange = (idx, field, value) => {
@@ -67,6 +75,7 @@ export default function Cadastro() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const payload = { ...form, children };
     await fetch('/api/register', {
       method: 'POST',
@@ -74,6 +83,15 @@ export default function Cadastro() {
       body: JSON.stringify(payload),
     });
     localStorage.setItem('registration', JSON.stringify(payload));
+
+    const guest = JSON.parse(localStorage.getItem('guest')) || {};
+    await fetch('/api/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ guest, children, ...form }),
+    });
+    localStorage.setItem('registration', JSON.stringify({ guest, children, ...form }));
+
     router.push('/programacao');
   };
 
@@ -99,9 +117,34 @@ export default function Cadastro() {
               placeholder="Idade"
               className="w-full border p-2"
             />
+
+
+            <input
+              value={child.restricoes}
+              onChange={(e) => handleChildChange(idx, 'restricoes', e.target.value)}
+              placeholder="Restrições alimentares"
+              className="w-full border p-2"
+            />
+            <input
+              value={child.alergias}
+              onChange={(e) => handleChildChange(idx, 'alergias', e.target.value)}
+              placeholder="Alergias"
+              className="w-full border p-2"
+            />
+            <label className="flex items-center gap-2">
+              <input
+                required
+                type="checkbox"
+                checked={child.autorizado}
+                onChange={(e) => handleChildChange(idx, 'autorizado', e.target.checked)}
+              />
+              Autorizo a participação
+            </label>
+
           </div>
         ))}
         <button type="button" onClick={addChild} className="border px-2 py-1">Adicionar criança</button>
+
 
         <h2 className="font-semibold">Dados pessoais</h2>
         <input
@@ -309,6 +352,8 @@ export default function Cadastro() {
           />
           Autorizo uso de imagem em redes sociais
         </label>
+
+
         <button className="bg-blue-600 text-white px-4 py-2 w-full" type="submit">Salvar</button>
       </form>
     </div>
